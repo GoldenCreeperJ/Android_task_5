@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.controlset.recycleChildView.RecycleChildView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recycleChildView"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/recycleChildViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</com.example.controlset.recycleChildView.RecycleChildView>
