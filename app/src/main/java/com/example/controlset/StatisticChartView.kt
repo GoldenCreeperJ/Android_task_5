@@ -74,8 +74,8 @@ fun DataChart(data:SnapshotStateList<ArrayList<Int>>, canvasOffset:Offset){
         var offsets=List(data.size) { index ->
             dataTransition.animateOffset(label = "", transitionSpec = { tween(durationMillis = 1000) }) {
                 Offset(
-                    ((it[index][0].toDouble() - xRange[0]) / (xRange[1] - xRange[0])).toFloat(),
-                    ((yRange[1] - it[index][1].toDouble()) / (yRange[1] - yRange[0])).toFloat()
+                    ((it[index][0].toDouble() - xRange[0]) / (xRange[1] - xRange[0]+0.1)).toFloat(),
+                    ((yRange[1] - it[index][1].toDouble()) / (yRange[1] - yRange[0]+0.1)).toFloat()
                 )
             }.value
         }
