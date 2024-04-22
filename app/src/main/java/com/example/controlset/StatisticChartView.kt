@@ -90,11 +90,14 @@ fun DataChart(data:SnapshotStateList<ArrayList<Int>>, canvasOffset:Offset){
                 offsets = offsets.map { Offset(it.x*this.size.width,it.y* this.size.height) }
                 for (i in offsets.withIndex()) {
                     canvas.nativeCanvas.drawText(
-                        "${data[i.index][0]},${data[i.index][1]}",
-                        i.value.x - 25,
-                        i.value.y - 25,
+                        "(${data[i.index][0]},${data[i.index][1]})",
+                        i.value.x - 60,
+                        i.value.y - 30,
                         android.graphics.Paint().apply { textSize = 50F })
-                }
+                    canvas.nativeCanvas.drawPoint(i.value.x,i.value.y,
+                        android.graphics.Paint().apply {
+                            strokeWidth=15F
+                            strokeCap=android.graphics.Paint.Cap.ROUND}) }
                 canvas.drawPoints(
                     PointMode.Polygon,
                     offsets,
