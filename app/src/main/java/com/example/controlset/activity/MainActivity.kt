@@ -22,30 +22,42 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val a= mutableStateListOf(arrayListOf(1,2),arrayListOf(3,4))
+        val a = mutableStateListOf(arrayListOf(1, 2), arrayListOf(3, 4))
         setContent {
             ControlSetTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Row{
+                    Row {
                         Column {
                             Button(
-                                onClick = { startActivity(Intent(this@MainActivity, OtherActivity::class.java)) }
+                                onClick = {
+                                    startActivity(
+                                        Intent(
+                                            this@MainActivity,
+                                            OtherActivity::class.java
+                                        )
+                                    )
+                                }
                             ) {
                                 Text(text = "RecycleViews")
                             }
                             Button(onClick = {
-                                a.add(arrayListOf(
-                                Random.nextInt(0,100),
-                                Random.nextInt(0,100))) }
+                                a.add(
+                                    arrayListOf(
+                                        Random.nextInt(0, 100),
+                                        Random.nextInt(0, 100)
+                                    )
+                                )
+                            }
                             ) {
                                 Text(text = "Random Add")
                             }
                             Button(onClick = {
-                                if (a.size>1)
-                                    a.removeAt(Random.nextInt(0,a.size)) }
+                                if (a.size > 1)
+                                    a.removeAt(Random.nextInt(0, a.size))
+                            }
                             ) {
                                 Text(text = "Random Del")
                             }
